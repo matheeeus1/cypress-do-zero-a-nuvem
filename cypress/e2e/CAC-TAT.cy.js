@@ -130,5 +130,18 @@ describe('Central de Atendimento ao Cliente TAT   ', () => {
       })
   })
 
+  it('verifica que a política de privacidade abre em outra aba sem a necessidade de um clique', () => {
+    cy.get('a[href="privacy.html"]')
+      .should('have.attr', 'href', 'privacy.html')
+      .and('have.attr', 'target', '_blank')
+  })
+  it('acessa a página da política de privacidade removendo o target e então clicando no link', () => {
+    cy.get('a[href="privacy.html"]')
+      .invoke('removeAttr', 'target')
+      .click()
+
+    cy.url().should('include', 'privacy.html')
+    cy.contains('h1', 'CAC TAT - Política de Privacidade').should('be.visible')
+  })
 
 })
