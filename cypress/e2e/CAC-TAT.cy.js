@@ -61,7 +61,6 @@ describe('Central de Atendimento ao Cliente TAT   ', () => {
       .clear('#open-text-area')
       .should('have.value', '')
   })
-
   it('exibe mensagem de erro ao submeter o formulário sem preencher os campos obrigatórios', () => {
     cy.contains('button', 'Enviar').click()
 
@@ -71,5 +70,20 @@ describe('Central de Atendimento ao Cliente TAT   ', () => {
     cy.fillMandatoryFieldsAndSubmit()
 
     cy.get('.success').should('be.visible')
+  })
+  it('seleciona um produto (youtube) por seu texto', () => {
+    cy.get('#product')
+      .select('YouTube')
+      .should('have.value', 'youtube')
+  })
+  it('seleciona um produto (Mentoria) por seu valor (value)', () => {
+    cy.get('#product')
+      .select('mentoria')
+      .should('have.value', 'mentoria')
+  })
+  it('seleciona um produto (Blog) por seu índice', () => {
+    cy.get('#product')
+      .select(1)
+      .should('have.value', 'blog')
   })
 })
