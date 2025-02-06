@@ -99,7 +99,7 @@ describe('Central de Atendimento ao Cliente TAT   ', () => {
           .should('be.checked')
       })
   })
-  it.only('marca ambos checkboxes, depos desmarca o último', () => {
+  it('marca ambos checkboxes, depos desmarca o último', () => {
     cy.get('input[type="checkbox"]')
       .check()
       .should('be.checked')
@@ -107,5 +107,28 @@ describe('Central de Atendimento ao Cliente TAT   ', () => {
       .uncheck()
       .should('not.be.checked')
   })
+  it('seleciona um arquivo da pasta fixtures', () => {
+    cy.get('#file-upload')
+      .selectFile('cypress/fixtures/example.json')
+      .should(input => {
+        expect(input[0].files[0].name).to.equal('example.json')
+      })
+  })
+  it('seleciona um arquivo simulando um drag-and-drop', () => {
+    cy.get('#file-upload')
+      .selectFile('cypress/fixtures/example.json', { action: 'drag-drop' })
+      .should(input => {
+        expect(input[0].files[0].name).to.equal('example.json')
+      })
+  })
+  it('seleciona um arquivo utilizando uma fixture para a qual foi dada um alias', () => {
+    cy.fixture('example.json').as('sampleFile')
+    cy.get('#file-upload')
+      .selectFile('@sampleFile')
+      .should(input => {
+        expect(input[0].files[0].name).to.equal('example.json')
+      })
+  })
+
 
 })
