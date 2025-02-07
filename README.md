@@ -1,28 +1,64 @@
-# 🌲 Cypress, do Zero à Nuvem ☁️
+# Cypress do Zero à Nuvem
 
-👋 Seja bem-vindo(a)!
+Este projeto é um exemplo de como utilizar o Cypress para testes automatizados de ponta a ponta. Abaixo estão as instruções para configurar e executar o projeto.
 
-É muito bom tê-lo(a) aqui. Tenho certeza que você vai amar esse curso. ❤️
+## Pré-requisitos
 
-## O que você vai aprender?
+- Node.js (versão 12 ou superior)
+- npm (gerenciador de pacotes do Node.js)
 
-- Como configurar um projeto Cypress do zero
-- Como visitar páginas locais e remotas
-- Como lidar com os elementos mais comuns encontrados em aplicações web
-- Como testar upload de arquivos
-- Como realizar as mais diversas verificações de resultados esperados
-- Como criar comandos customizados
-- Como lidar com links que abrem em outra aba do navegador
-- Como rodar testes simulando as dimensões de um dispositivo móvel
-- Como resolver os mesmos problemas de diferentes formas, conhecendo a [API do Cypress](https://docs.cypress.io/api/table-of-contents)
-- Como criar uma documentação mínima para seu projeto de testes automatizados
-- Como executar os testes em um _workflow_ de integração contínua sempre que mudanças ocorrerem no código da aplicação (ou dos testes)
-- Como integrar seu _workflow_ de integração contínua com o Cypress Cloud (o serviço de gestão de testes do Cypress na nuvem)
+## Instalação
 
-## Vamos começar?
+1. Clone o repositório:
+    ```bash
+    git clone https://github.com/seu-usuario/cypress-do-zero-a-nuvem.git
+    ```
+2. Navegue até o diretório do projeto:
+    ```bash
+    cd cypress-do-zero-a-nuvem
+    ```
+3. Instale as dependências:
+    ```bash
+    npm install
+    ```
 
-Vá para a seção [estrutura do curso](./lessons/_course-structure_.md).
+## Estrutura do Projeto
 
-___
+- `cypress/`: Contém todos os testes e configurações do Cypress.
+  - `integration/`: Contém os arquivos de teste.
+  - `fixtures/`: Contém dados estáticos usados nos testes.
+  - `plugins/`: Contém plugins e configurações adicionais.
+  - `support/`: Contém comandos customizados e configurações globais.
 
-Este é um curso da **Escola Talking About Testing**.
+## Executando os Testes
+
+Para executar os testes em modo interativo:
+```bash
+npx cypress open
+```
+
+Para executar os testes em modo headless:
+```bash
+npx cypress run
+```
+
+## Contribuição
+
+1. Faça um fork do projeto.
+2. Crie uma nova branch:
+    ```bash
+    git checkout -b minha-nova-feature
+    ```
+3. Faça suas alterações e commit:
+    ```bash
+    git commit -m 'Adiciona nova feature'
+    ```
+4. Envie para o repositório remoto:
+    ```bash
+    git push origin minha-nova-feature
+    ```
+5. Abra um Pull Request.
+
+## Licença
+
+Este projeto está licenciado sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
